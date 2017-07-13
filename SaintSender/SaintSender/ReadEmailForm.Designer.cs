@@ -110,7 +110,7 @@
             // 
             // timer
             // 
-            this.timer.Interval = 60000;
+            this.timer.Interval = 10000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // btnSend
@@ -125,8 +125,7 @@
             // 
             // ReadEmailForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(913, 545);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.lstMailbox);
@@ -137,7 +136,7 @@
             this.Controls.Add(this.txtMessage);
             this.Name = "ReadEmailForm";
             this.Text = "Saint Sender";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.ReadEmailForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

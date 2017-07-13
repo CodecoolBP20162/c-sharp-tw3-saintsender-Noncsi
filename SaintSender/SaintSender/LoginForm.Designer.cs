@@ -34,7 +34,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -43,11 +43,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.lblWelcome.Location = new System.Drawing.Point(33, 18);
+            this.lblWelcome.Location = new System.Drawing.Point(117, 18);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(486, 25);
+            this.lblWelcome.Size = new System.Drawing.Size(316, 25);
             this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "WELCOME TO SAINTSENDER 2 REMASTERED ";
+            this.lblWelcome.Text = "WELCOME TO SAINTSENDER ";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblLoginfirst
@@ -55,9 +55,9 @@
             this.lblLoginfirst.AutoSize = true;
             this.lblLoginfirst.Location = new System.Drawing.Point(228, 43);
             this.lblLoginfirst.Name = "lblLoginfirst";
-            this.lblLoginfirst.Size = new System.Drawing.Size(86, 13);
+            this.lblLoginfirst.Size = new System.Drawing.Size(89, 13);
             this.lblLoginfirst.TabIndex = 1;
-            this.lblLoginfirst.Text = "Please, login first";
+            this.lblLoginfirst.Text = "Please, log in first";
             // 
             // lblUsername
             // 
@@ -92,21 +92,22 @@
             this.txtPassword.Size = new System.Drawing.Size(265, 20);
             this.txtPassword.TabIndex = 5;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(231, 186);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(231, 186);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Log in";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 221);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUsername);
@@ -115,7 +116,6 @@
             this.Controls.Add(this.lblWelcome);
             this.Name = "LoginForm";
             this.Text = "Saint Sender - Login";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +129,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogin;
     }
 }

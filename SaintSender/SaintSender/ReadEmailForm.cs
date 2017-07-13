@@ -1,34 +1,29 @@
-﻿using Limilabs.Mail;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using System;
-using MailKit.Net.Imap;
-using MailKit.Search;
-using MailKit;
-using MimeKit;
 
 namespace SaintSender
 {
-    public partial class ReadEmailForm : Form
+    partial class ReadEmailForm : Form
     {
-        static GetMails mailKit = new GetMails();
         List<Mailbox> mails;
+        GetMails client;
 
-        public ReadEmailForm()
+        public ReadEmailForm(GetMails client)
         {
             InitializeComponent();
+            this.client = client;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ReadEmailForm_Shown(object sender, EventArgs e)
         {
-            timer.Start();
-            FillMailbox();           
+            FillMailbox();
+            timer.Start();          
         }
 
-        void DownloadMails()
+        public void DownloadMails()
         {
-            mails = mailKit.DownloadMessages();
+            mails = client.DownloadMessages();
         }
 
         void FillMailbox()
@@ -61,5 +56,7 @@ namespace SaintSender
             WriteEmailForm sendMail = new WriteEmailForm();
             sendMail.Show();
         }
+
+        
     }
 }

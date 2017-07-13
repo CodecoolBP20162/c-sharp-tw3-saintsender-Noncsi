@@ -18,15 +18,14 @@ namespace SaintSender
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            Login login = new Login(username, password);
-            login.Credentials();
+            GetMails client = new GetMails();
+            client.Authenticate(txtUsername.Text, txtPassword.Text);
+            ReadEmailForm letsSeeMyEmails = new ReadEmailForm(client);
+            letsSeeMyEmails.Show();
+            Hide();
         }
-
-       
     }
 
 }
